@@ -1,0 +1,14 @@
+<h3>This is Dashboard</h3>
+<%= dashboard_menu_options %>
+
+<!--
+<%= link_to "Add Project", "project#index"%>
+ 
+<%if current_user.admin?%>
+    <%= link_to "invite User", new_user_invitation_path %><br>
+    <%= render partial: 'user/index' %>
+<%else%>
+    <h1>Hello General User</h1>
+<%end%>
+
+-->

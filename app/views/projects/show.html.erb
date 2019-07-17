@@ -1,0 +1,34 @@
+<%= link_to "<< Back to List",:back %>
+
+<div class="Projects show">
+  <h2>Show Projects</h2>
+
+  <table summary="Project detail view">
+   
+    <tr>
+        <th>Name</th>
+        <td><%= @projects.name %></td>
+    </tr>
+    <tr>
+        <th>Assigned User ID</th>
+        <td><%= @projects.user_ids %></td>
+    </tr>
+    <tr>
+        <th>Assigned User Email</th>
+        <td><%=assigned_user_email%></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td><%= @projects.description %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @projects.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @projects.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

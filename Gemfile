@@ -32,6 +32,8 @@ gem 'devise', '~>4.6.2'
 
 gem 'devise_invitable', '~> 2.0.1'
 
+gem 'chosen-rails'
+
 
 
 group :development, :test do

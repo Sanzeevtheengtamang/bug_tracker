@@ -1,0 +1,31 @@
+<div class="Project index">
+  <h2>Projects</h2>
+ 
+  <%= link_to "Add New Section" ,new_project_path %>
+
+  <table class="listing" summary="Section list">
+    <tr class="header">
+      <th>#</th>
+      <th>Project Name</th>
+      <th>User</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    <% @projects.each do |project| %>
+    <%if project.user_ids.include?(current_user.id) || current_user.admin%>
+    <tr>
+      <td><%= project.id %></td>
+      <td><%= project.name %></td>
+      <td><%= project.user_ids %></td>
+      <td><%= project.description %></td>
+      <td class="actions">
+        <%= link_to "Show", project_path(project) %>
+        <%= link_to "Edit", edit_project_path(project) %>
+        <%= link_to "Delete", delete_project_path(project) %>
+      </td>
+    </tr>
+    <%end%>
+    <% end %>
+  </table>
+  
+</div>

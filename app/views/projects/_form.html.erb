@@ -1,0 +1,32 @@
+<%= link_to("<< Back to List", projects_path, :class => 'back-link') %>
+
+<div class="projects new">
+  <h2>Create Project</h2>
+
+  <%= form_for(@projects) do |f| %>
+
+    <table summary="Projects form fields">
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:name) %></td>
+      </tr>
+      <tr>
+        <th>Assigned User</th>
+        <td><%= f.collection_select :u_id, User.all, :id, :email,{ include_blank: false, include_hidden: false },{multiple: true }%><td>
+       
+
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td><%= f.text_field(:description) %></td>
+      </tr>
+
+    </table>
+    
+
+    <div class="form-buttons">
+      <%= f.submit("Create Project") %>
+    </div>
+
+  <% end %>
+</div>

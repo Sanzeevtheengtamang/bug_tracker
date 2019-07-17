@@ -1,0 +1,10 @@
+
+<% @users.each do |members| %>
+    
+    <% if current_user.email != members.email%>
+    <%=members.email%>
+    <%=members.invitation_accepted_at ? "Accepted" : "Pending"%>
+    <%= link_to "delete", user_destroy_path(:id => members.id), :method => :delete %>
+    <br>
+    <%end%>
+ <% end %>

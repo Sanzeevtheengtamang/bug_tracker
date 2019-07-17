@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", projects_path, :class => 'back-link') %>
+
+<div class="sections Projects">
+  <h2>Delete Projects</h2>
+
+  <%= form_for(@projects, :method => 'delete') do |f| %>
+
+    <p>Are you sure you want to permanently delete this Project?</p>
+
+    <p class="reference-name"><%= f.object.name %></p>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete Projects") %>
+    </div>
+
+  <% end %>
+</div>
