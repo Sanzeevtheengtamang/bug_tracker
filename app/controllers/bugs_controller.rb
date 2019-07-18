@@ -2,10 +2,12 @@ class BugsController < ApplicationController
   before_action :authenticate_user! , :project_id
   
   def index
+    # @bug = Bug.all
     @bugs=Bug.where(:project_id => @project_id)
   end
 
   def show
+    # binding.pry
     @bug=Bug.find(params[:id])
   end
 

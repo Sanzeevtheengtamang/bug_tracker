@@ -1,2 +1,22 @@
-<h1>Bugs#show</h1>
-<p>Find me in app/views/bugs/show.html.erb</p>
+<%= link_to "<< Back to List",:back %>
+
+<div class="Bugs show">
+  <h2>Bugs</h2>
+
+  <table summary="Bug detail view">
+   
+    <tr>
+        <th>Name</th>
+        <td><%= @bug.bug_name %></td>
+    </tr>
+
+    <tr>
+        <th>Description</th>
+        <td><%= @bug.bug_description %></td>
+    </tr>
+   </table>
+
+   <%= commontator_thread(@bug) %>
+
+
+</div>

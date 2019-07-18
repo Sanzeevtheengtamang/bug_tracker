@@ -36,6 +36,14 @@ gem 'chosen-rails'
 
 gem 'paranoia'
 
+gem 'commontator'
+
+gem 'acts_as_votable'
+
+gem 'jquery-rails'
+
+gem 'sassc-rails'
+
 
 
 group :development, :test do

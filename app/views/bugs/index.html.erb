@@ -21,6 +21,7 @@
       <td class="actions">
         <%= link_to "Change Status",edit_project_bug_path(bug.project_id,bug) %>
       </td>
+      <td><%= link_to "Change Status",project_bug_path(bug.project_id,bug)%></td>
     </tr>
     <%i+=1%>
     <% end %>
