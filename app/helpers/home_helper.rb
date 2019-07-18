@@ -6,9 +6,11 @@ module HomeHelper
         links += "<br>"
         if current_user.admin?
             links += link_to "Invite Users!", new_user_invitation_path 
+            links += "<br>"
             links += link_to "Users", user_index_path
             links += "<br>"
         end 
+        # links += link_to "Bugs", bugs_path
         links += link_to "Projects", projects_path	
         links.html_safe
     end

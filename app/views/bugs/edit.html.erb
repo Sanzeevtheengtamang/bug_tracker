@@ -1,2 +1,24 @@
-<h1>Bugs#edit</h1>
-<p>Find me in app/views/bugs/edit.html.erb</p>
+<h1>Bug add</h1>
+<%=link_to "Get back",project_bugs_path%>
+<%= form_for([@project, @bug]) do |f| %>
+
+<table summary="Bug form fields">
+ <tr>
+    <th>Name</th>
+    <td><%= f.text_field(:bug_name) %></td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td><%= f.text_field(:bug_description) %></td>
+  </tr>
+  <tr>
+    <th>Status</th>
+    <td><%= f.select :status, Bug.statuses.keys %></td>
+  </tr>     
+</table>  
+   
+    <div class="form-buttons">
+      <%= f.submit("update Bug") %>
+    </div>
+
+  <% end %>

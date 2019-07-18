@@ -34,6 +34,8 @@ gem 'devise_invitable', '~> 2.0.1'
 
 gem 'chosen-rails'
 
+gem 'paranoia'
+
 
 
 group :development, :test do

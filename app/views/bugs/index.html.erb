@@ -1,2 +1,29 @@
-<h1>Bugs#index</h1>
-<p>Find me in app/views/bugs/index.html.erb</p>
+<div class="BUGS index">
+  <h2>Bugs</h2>
+ 
+  <%= link_to "Add New Bugs" ,new_project_bug_path %>
+
+  <table class="listing" summary="Section list">
+    <tr class="header">
+      <th>#</th>
+      <th>Bugs</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    <%i=1%>
+    <% @bugs.each do |bug| %>    
+    <tr>
+      <td><%= i %></td>
+      <td><%= bug.bug_name %></td>
+      <td><%= bug.bug_description %></td>
+      <td><%= bug.status %></td>
+      <td class="actions">
+        <%= link_to "Change Status",edit_project_bug_path(bug.project_id,bug) %>
+      </td>
+    </tr>
+    <%i+=1%>
+    <% end %>
+  </table>
+  
+</div>
