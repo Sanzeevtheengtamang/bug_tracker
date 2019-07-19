@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_18_171035) do
+ActiveRecord::Schema.define(version: 2019_07_19_043003) do
 
   create_table "bugs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "project_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_171035) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
     t.index ["project_id"], name: "index_bugs_on_project_id"
   end
 

@@ -43,10 +43,25 @@ class BugsController < ApplicationController
     end
   end
 
+  def assign
+    @bug = Bug.find(params[:id])
+    @bug.user = current_user
+    if @bug.save
+      redirect_to(project_bugs_path(@project_id))
+    else
+      render('edit')
+    end
+  end
+
+
   def delete
+    @bug=Bug.find(params[:id])
   end
 
   def destroy
+    @bug=Bug.find(params[:id])
+    @bug.destroy
+    redirect_to(projects_path)
   end
 
   private

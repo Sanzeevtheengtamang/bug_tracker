@@ -11,6 +11,10 @@ require("jquery")
 require("chosen-js")
 require("packs/scaffold.js")
 
+require("commontator/application")
+
+//= require commontator/application
+
 import('packs/chosen.css')
 import '../stylesheets/application'
 // Uncomment to copy all static images under ../images to the output folder and reference

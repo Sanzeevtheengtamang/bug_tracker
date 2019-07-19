@@ -19,9 +19,10 @@
       <td><%= bug.bug_description %></td>
       <td><%= bug.status %></td>
       <td class="actions">
-        <%= link_to "Change Status",edit_project_bug_path(bug.project_id,bug) %>
+        <%=assign_me(bug)%>
       </td>
-      <td><%= link_to "Change Status",project_bug_path(bug.project_id,bug)%></td>
+      <td><%= link_to "view",project_bug_path(bug.project_id,bug)%></td>
+      <td><%= link_to("assign", project_assign_bug_path(bug.project_id,bug), :method => :put)%></td>
     </tr>
     <%i+=1%>
     <% end %>
