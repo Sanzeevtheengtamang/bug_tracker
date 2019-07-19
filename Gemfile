@@ -44,6 +44,8 @@ gem 'jquery-rails'
 
 gem 'sassc-rails'
 
+gem 'whenever'
+
 
 
 group :development, :test do

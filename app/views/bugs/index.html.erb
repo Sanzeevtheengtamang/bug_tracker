@@ -10,6 +10,8 @@
       <th>Description</th>
       <th>Status</th>
       <th>Actions</th>
+      <th></th>
+      <th>Assigned To</th>
     </tr>
     <%i=1%>
     <% @bugs.each do |bug| %>    
@@ -22,7 +24,7 @@
         <%=assign_me(bug)%>
       </td>
       <td><%= link_to "view",project_bug_path(bug.project_id,bug)%></td>
-      <td><%= link_to("assign", project_assign_bug_path(bug.project_id,bug), :method => :put)%></td>
+      <td> <%=already_assign(bug)%> </td>     
     </tr>
     <%i+=1%>
     <% end %>
