@@ -1,11 +1,11 @@
-<%= link_to("<< Back to List", projects_path, :class => 'back-link') %>
 
-<div class="projects new">
+<div class="container">
+<%= link_to("<< Back to List", projects_path, :class => 'btn btn-info') %>
   <h2>Create Project</h2>
 
   <%= form_for(@projects) do |f| %>
 
-    <table summary="Projects form fields">
+    <table class= "table table-borderless",summary="Projects form fields">
       <tr>
         <th>Name</th>
         <td><%= f.text_field(:name) %></td>

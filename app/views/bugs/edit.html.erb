@@ -1,8 +1,9 @@
+<div class="container">
 <h1>Bug add</h1>
 <%=link_to "Get back",project_bugs_path%>
 <%= form_for([@project, @bug]) do |f| %>
 
-<table summary="Bug form fields">
+<table class= "table" summary="Bug form fields">
  <tr>
     <th>Name</th>
     <td><%= f.text_field(:bug_name) %></td>
@@ -22,3 +23,4 @@
     </div>
 
   <% end %>
+</div>

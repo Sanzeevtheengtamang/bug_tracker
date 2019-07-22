@@ -1,9 +1,12 @@
-<div class="BUGS index">
+<div class="container">
   <h2>Bugs</h2>
  
   <%= link_to "Add New Bugs" ,new_project_bug_path %>
 
-  <table class="listing" summary="Section list">
+  <%= form_for :bugs, url: batch_update_project_bugs_path(@project_id)  do |f| %>
+
+
+  <table class="table table-borderless" summary="Section list">
     <tr class="header">
       <th>#</th>
       <th>Bugs</th>
@@ -21,13 +24,21 @@
       <td><%= bug.bug_description %></td>
       <td><%= bug.status %></td>
       <td class="actions">
-        <%=assign_me(bug)%>
+        <%=assign_me(bug,f)%>
       </td>
-      <td><%= link_to "view",project_bug_path(bug.project_id,bug)%></td>
-      <td> <%=already_assign(bug)%> </td>     
+      <td><%= link_to "view",project_bug_path(bug.project_id,bug),class:"btn btn-info"%></td>
+      <td><%= link_to "Delete",project_bug_path(bug.project_id,bug)%></td>
+      <td> <%=already_assign(bug)%> </td>  
+   
     </tr>
     <%i+=1%>
     <% end %>
   </table>
+    <div class="form-buttons">
+    <%= select_tag "#{f.object_name}[status]", options_for_select(Bug.statuses) %>
+    <%= f.submit%>
+    </div>
+  
+  <%end%>
   
 </div>

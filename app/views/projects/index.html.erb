@@ -1,9 +1,9 @@
-<div class="Project index">
+<div class="container">
   <h2>Projects</h2>
  
   <%=admin_header%>
 
-  <table class="listing" summary="Section list">
+  <table class="table table-striped" summary="Section list">
     <tr class="header">
       <th>#</th>
       <th>Project Name</th>
@@ -11,6 +11,7 @@
       <th>Description</th>
       <th>Actions</th>
       <th>Bugs</th>
+      <th><th>
     </tr>
     <%i=1%>
     <% @projects.each do |project| %>
@@ -21,16 +22,14 @@
       <td><%= project.user_ids %></td>
       <td><%= project.description %></td>
       <td class="actions">
-        <%= link_to "Show", project_path(project) %>
+        <%= link_to "Show", project_path(project),class: 'btn btn-info' %>
         <%=admin_user(project)%>
-      </td>
-            <td>
-        <%= link_to "Add bug", new_project_bug_path(project) %>
-      </td>
       <td>
-        <%= link_to "Show bugs", project_bugs_path(project) %>
-        <%= link_to "view", project_bugs_path(project) %>
-      </td>
+        <%= link_to "Add Bug", new_project_bug_path(project),class: 'btn btn-success'%>
+
+        <%= link_to "Show Bugs", project_bugs_path(project),class: 'btn btn-warning'%>
+      
+        <%= link_to "Bugs Detail", project_bugs_path(project),class: 'btn btn-info' %></td>
     </tr>
     <%i+=1%>
     <%end%>

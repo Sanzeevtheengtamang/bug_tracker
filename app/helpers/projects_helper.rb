@@ -10,9 +10,9 @@ module ProjectsHelper
     def admin_user(project)
       a = ""
       if current_user.admin
-        a += link_to "Edit", edit_project_path(project)
+        a += link_to "Edit", edit_project_path(project),class: 'btn btn-warning'
         a += " "
-        a += link_to "Delete", delete_project_path(project)
+        a += link_to "Delete", delete_project_path(project),class: 'btn btn-danger'
       end
       a.html_safe
     end
@@ -20,7 +20,7 @@ module ProjectsHelper
     def admin_header
       a =""
       if current_user.admin
-        a = link_to "Add New Section" ,new_project_path
+        a = link_to "Add New Project" ,new_project_path
       end
       a.html_safe
     end

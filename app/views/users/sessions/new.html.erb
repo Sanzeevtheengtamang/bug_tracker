@@ -1,7 +1,9 @@
-<h2>Log in</h2>
+<div class="container">
+<h2>Log inn</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
+
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -19,8 +21,9 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log innn" , class: "btn btn-sucess"%>
   </div>
 <% end %>
 
+</div>
 <%= render "users/shared/links" %>

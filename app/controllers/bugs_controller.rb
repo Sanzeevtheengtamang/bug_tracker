@@ -64,6 +64,15 @@ class BugsController < ApplicationController
     redirect_to(projects_path)
   end
 
+  def batch_update
+    # BugWorker.perform_async
+    #binding.pry
+    bug_ids = params[:bugs][:ids]
+    status = params[:bugs][:status]
+    BugWorker.perform_async(bug_ids, status)
+    
+  end
+
   private
 
   def project_id

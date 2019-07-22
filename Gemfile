@@ -46,6 +46,11 @@ gem 'sassc-rails'
 
 gem 'whenever'
 
+gem 'bootstrap-sass'
+gem 'bootstrap'
+
+gem 'sidekiq'
+
 
 
 group :development, :test do

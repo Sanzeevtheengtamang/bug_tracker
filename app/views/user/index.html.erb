@@ -1,25 +1,28 @@
-<%= link_to "<< Back" ,:back %>
- <div class="User index">
+ <div class="container">
+ <%= link_to "<< Back" ,:back ,class: "btn btn-primary hBack" %>
   <h2>Users</h2>
-  <table class="listing" summary="Subject list">
+  <table class="table table-striped" summary="Subject list">
     <tr class="header">
       <th>#</th>
+      <th>User ID</th>
       <th>Email</th>
       <th>Invitation</th>
-      <th>Actions</th>
+      <th></th>
     </tr>
+
+    <%i=1%>
     <% @users.each do |user| %>
     <% if current_user.email != user.email%>
     <tr>
+      <td><%=i%></td>
       <td><%= user.id %></td>
       <td><%= user.email %></td>
       <td class="center"><%=user.invitation_accepted_at ? "Accepted" : "Pending"%></td>
       <td class="actions">
-        <%= link_to "Show", "#" %>
-        <%= link_to "Edit", "#" %>
-        <%= link_to "delete", user_destroy_path(:id => user.id), :method => :delete %>
+        <%= link_to "delete", user_destroy_path(:id => user.id), :method => :delete, class: "btn btn-danger" %>
       </td>
     </tr>
+    <%i+=1%>
     <%end%>
     <% end %>
   </table>
